@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0f0d" />
+  <title>Tactical Radio</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section id="joinScreen" class="card join-card">
+      <div class="eyebrow">TACTICAL RADIO • DESKTOP</div>
+      <h1>Bas. Konuş. Bırak.</h1>
+      <p class="muted">2–4 kişilik telsiz. Masaüstü sürümünde PTT tuşu oyun açıkken de çalışır.</p>
+      <label class="field">
+        <span>Kullanıcı adı</span>
+        <input id="username" maxlength="20" autocomplete="nickname" placeholder="Ahmet" />
+      </label>
+      <button id="joinBtn" class="primary">TELSİZE BAĞLAN</button>
+      <p id="joinError" class="error"></p>
+    </section>
+
+    <section id="radioScreen" class="card radio-card hidden">
+      <header class="radio-header">
+        <div>
+          <div class="eyebrow">TACTICAL RADIO • DESKTOP</div>
+          <h2 id="myName">-</h2>
+        </div>
+        <div id="connBadge" class="badge">BAĞLANIYOR</div>
+      </header>
+
+      <div class="status-grid">
+        <div class="status-box"><span>KANAL</span><strong>01</strong></div>
+        <div class="status-box"><span>GLOBAL PTT</span><strong id="keyLabel">V</strong></div>
+        <div class="status-box"><span>KULLANICI</span><strong id="userCount">1</strong></div>
+      </div>
+
+      <div class="users-wrap">
+        <div class="section-title">KANALDAKİLER</div>
+        <div id="users" class="users"></div>
+      </div>
+
+      <button id="pttBtn" class="ptt" type="button">
+        <span class="ptt-ring"></span>
+        <span class="ptt-main">BASILI TUT</span>
+        <span class="ptt-sub">KONUŞ</span>
+      </button>
+
+      <div class="controls">
+        <button id="setKeyBtn" class="ghost">PTT TUŞUNU DEĞİŞTİR</button>
+        <button id="micBtn" class="ghost">MİKROFON SEÇ</button>
+        <button id="testBtn" class="ghost test-btn">TEK KİŞİLİK TEST</button>
+      </div>
+
+      <div id="micPanel" class="mic-panel hidden">
+        <select id="micSelect"></select>
+        <button id="applyMicBtn" class="small-btn">UYGULA</button>
+      </div>
+
+      <p class="hint">Uygulamayı küçültebilirsin. Seçili PTT tuşu başka bir oyun/pencere öndeyken de dinlenir. Uygulamayı tamamen kapatırsan telsiz de kapanır.</p>
+      <p id="testHint" class="hint hidden">🎧 TEST AÇIK: PTT tuşuna basıp kendi telsiz sesini duyabilirsin. Yankı olmaması için kulaklık kullan.</p>
+      <p id="statusText" class="status-text">Hazırlanıyor…</p>
+    </section>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
